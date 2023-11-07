@@ -1,0 +1,26 @@
+<form id="attendence_Id" [formGroup]="attendenceFormInfo" (ngSubmit)="attendenceFormInfo.reset()">
+    <h2>Mark Student Attendence</h2>
+    <div class="form-group">
+        <label for="name">Student ID</label>
+        <br>
+        <!-- <input class="form-control" type="text" placeholder="Enter name" formControlName="studentId">  -->
+        <mat-form-field appearance="outline" style="width: 30vw;">
+            <mat-label>Select</mat-label>
+            <mat-select formControlName="studentId">
+                <mat-option *ngFor="let student of studentInfo" [value]="student.id">{{ student.id }}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div class="form-group">
+        <label>Enter Date</label>
+        <input type="date" class="form-control" placeholder="Enter Date" formControlName="date">
+    </div>
+    <label>Status</label>
+    <select class="form-select" aria-label="Default select example" formControlName="Status">
+        <option selected>---- select ----</option>
+        <option value="Present">Present</option>
+        <option value="Absent">Absent</option>
+    </select>
+    <button [disabled]="!attendenceFormInfo.valid" type="submit" class="btn btn-primary"
+        (click)="onSubmit()">Submit</button>
+</form>

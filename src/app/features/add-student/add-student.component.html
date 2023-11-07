@@ -1,0 +1,22 @@
+<form id="form_Id" [formGroup]="studentProfile">
+    <h2>Add Student Details</h2>
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input class="form-control" type="text" placeholder="Enter name" formControlName="name">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            placeholder="Enter email" formControlName="email">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" formControlName="password">
+    </div>
+    <div class="form-group">
+        <label for="name">Phone Number</label> 
+        <input class="form-control" type="text" placeholder="Enter phone number" formControlName="phone">
+    </div>
+    <button [disabled]="!studentProfile.valid" type="submit" class="btn btn-primary" (click)="onSubmit()">Submit</button>
+</form>
