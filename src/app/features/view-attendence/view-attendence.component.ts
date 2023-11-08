@@ -32,7 +32,7 @@ export class ViewAttendenceComponent implements OnInit {
           console.log("View data", this.attendeceData);
           this.SingleAttendeceData = this.attendeceData.filter((val: any) => val.studentId === this.id)
           console.log("SingleAttendeceData", this.SingleAttendeceData);
-        })
+        });
     })
   }
 
